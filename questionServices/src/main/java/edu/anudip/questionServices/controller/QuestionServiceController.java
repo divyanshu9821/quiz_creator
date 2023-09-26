@@ -47,7 +47,7 @@ public class QuestionServiceController {
 
 
 
-    @GetMapping("listQuizQuestions")
+    @PostMapping("listQuizQuestions")
     public ResponseEntity<List<QuestionWrapper>> getQuestionsFromIds(@RequestBody List<Integer> quesIds){
         return quesServe.getQuestionsFromId(quesIds);
     }
@@ -56,7 +56,7 @@ public class QuestionServiceController {
 
 
 
-    @GetMapping("score")
+    @PostMapping("score")
     public ResponseEntity<Integer> getScore(@RequestBody List<Response> responses){
         return quesServe.getScore(responses);
     }

@@ -29,7 +29,7 @@ public class QuizController {
 
 
 
-    @PostMapping("getQuiz/{id}")
+    @GetMapping("getQuiz/{id}")
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestion(@PathVariable Integer id){
         return quizService.getQuizQuestions(id);
     }

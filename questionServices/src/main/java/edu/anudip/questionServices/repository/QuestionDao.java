@@ -15,6 +15,6 @@ public interface QuestionDao extends JpaRepository<Question, Integer> {
 
     // :<var> should match to the argument <var> passed in method
     // :<var1> should match to the @Param("<var1>")
-    @Query(value = "select id from question where category=:category order by random() limit :numQ", nativeQuery = true)
+    @Query(value = "select id from question where category=:category order by rand() limit :numQ", nativeQuery = true)
     List<Integer> findRandomQuestionsByCategory(String category,int numQ);
 }

@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient("question-services")
+@FeignClient("QUESTION-SERVICES")
 public interface RequestToQuesService {
 
-    @GetMapping("questionService/randomQuestionIds")
+    @GetMapping("question/randomQuestionIds")
     public ResponseEntity<List<Integer>> getQuesForQuiz(@RequestParam String category, @RequestParam Integer noOfQues);
 
-    @PostMapping("questionService/listQuizQuestions")
+    @PostMapping("question/listQuizQuestions")
     public ResponseEntity<List<QuestionWrapper>> getQuesFromIds(@RequestBody List<Integer> quesIds);
 
-    @PostMapping("questionService/score")
+    @PostMapping("question/score")
     public ResponseEntity<Integer> getScore(@RequestBody List<Response> responses);
 }
